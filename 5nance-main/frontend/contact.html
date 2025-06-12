@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5nance</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/contact.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/nav.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script src="js/contact.js"></script>
+  <script type="text/javascript">
+    (function(){
+        emailjs.init({
+          publicKey: "vNoToEMXemYuPjecu",
+        });
+    })();
+  </script>
+</head>
+
+<body style="background-color: #010725; color: white; font-family: 'DM Sans', 'Inter', sans-serif;">
+  
+<!-- Navbar -->
+<div id="navbar-placeholder"></div>
+
+  <!-- Decorative Banner Below Navbar -->
+  <div class="banner-bg">
+    <h1 class="fw-bold">Contact Us</h1>
+    <p class="lead text-light">Questions, bug reports, feedback — we're here for it all.</p>
+  </div>
+
+
+  <!-- Feedback Section -->
+  <section class="scroll-fade-up feedback-section py-5">
+    <div class="container">
+      <div class="feedback-box shadow p-4 rounded bg-white">
+      <form action="/submit-feedback" onsubmit="sendMail(event)" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="userName" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" name="userName" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="userEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="userEmail" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="feedback" class="form-label">What's On Your Mind</label>
+          <textarea class="form-control" id="feedback" name="feedback" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thank You Modal -->
+<div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="thankYouModalLabel">Form Submitted</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Thank you for your message! We'll get back to you as soon as possible.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault(); // stop actual submission
+    const thankYouModal = new bootstrap.Modal(document.getElementById("thankYouModal"));
+    thankYouModal.show();
+    this.reset(); // reset form fields
+  });
+</script>
+  
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/navbar.js"></script>
+  <script>
+  const floatElements = document.querySelectorAll('.scroll-fade-up');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  floatElements.forEach(el => observer.observe(el));
+</script>
+</body>
+<!-- Footer -->
+<footer class="text-center py-3 text-white" style="background-color: #010725;">
+  &copy; copyright 5nance <span id="year"></span>
+</footer>
+</html>

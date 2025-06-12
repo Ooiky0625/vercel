@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5nance</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/home.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/nav.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body style="background-color: #010725; color: white; font-family: 'DM Sans', 'Inter', sans-serif;">
+
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Welcoming Page / Hero Section -->
+  <section class="hero-section d-flex align-items-center justify-content-center text-center p-5">
+    <div class="overlay"></div>
+    <div class="content position-relative text-white">
+      <h1 class="display-4 fw-bold">
+        Your <span class="blur-on-load text-warning">Financial Freedom</span> Starts Here
+      </h1>
+      <p class="mb-4">Plan, track, and optimize your investments with our intuitive tools—all in one place.</p>
+  
+      <!-- <a href="sign-up-page.html" class="btn btn-warning btn-md mb-3 fw-bold custom-btn">
+        CREATE AN ACCOUNT
+      </a>    
+  
+      <div class="d-flex justify-content-center align-items-center gap-2">
+        <p class="mb-0">Already a user?</p>
+        <a href="log-in-page.html" class="text-warning login-link">Login</a>
+      </div> -->
+
+      <div id="guest-actions">
+      <a href="sign-up-page.html" class="btn btn-warning btn-md mb-3 fw-bold custom-btn">
+        CREATE AN ACCOUNT
+      </a>    
+  
+      <div class="d-flex justify-content-center align-items-center gap-2">
+        <p class="mb-0">Already a user?</p>
+        <a href="log-in-page.html" class="text-warning login-link">Login</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Financial Wisdom Section -->
+
+  <section class="scroll-fade-up quote-section section-dark py-5">
+    <div class="container text-center">
+  
+       <!-- Heading above  -->
+      <h2 class="text-white text-start mb-4">Financial Wisdom for Your Journey</h2>
+  
+       <!-- Carousel  -->
+      <div id="wisdomCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div id="wisdomCarouselInner" class="carousel-inner">
+          <!-- The quotes will be dynamically inserted here from quotes.js  -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#wisdomCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#wisdomCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+        <div class="carousel-indicators" id="wisdomIndicators"></div>
+    </div>
+  </section>
+
+
+  <!-- Importance Section -->
+<section class="scroll-fade-up section-dark py-5">
+  <div class="container">
+    <h2 class="text-white mb-4">Why Financial Planning Matters</h2>
+    <div class="row g-4 justify-content-center">
+      
+      <!-- BENEFIT 1 -->
+      <div class="col-12">
+        <div class="info-widget d-flex align-items-center justify-content-start p-4" style="background-color: #010D50; border-radius: 40px; height: 180px;">
+          <i class="bi bi-umbrella-fill" style="color: #0328EE; font-size: 3rem; min-width: 80px;"></i>
+          <div>
+            <h5 class="text-white fw-bold mb-4">Emergency Buffer</h5>
+            <p class="mb-0">A safety net covering 3–6 months of living expenses, kept in liquid accounts for unexpected events like job loss or medical bills.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BENEFIT 2 -->
+      <div class="col-12">
+        <div class="info-widget d-flex align-items-center justify-content-start p-4" style="background-color: #010D50; border-radius: 40px; height: 180px;">
+          <i class="bi bi-credit-card-2-front-fill" style="color: #0328EE; font-size: 3rem; min-width: 80px;"></i>
+          <div>
+            <h5 class="text-white fw-bold mb-4">Debt Strategy</h5>
+            <p class="mb-0">Systematic repayment plans to eliminate high-interest debt within 3–5 years while preserving credit health.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BENEFIT 3 -->
+      <div class="col-12">
+        <div class="info-widget d-flex align-items-center justify-content-start p-4" style="background-color: #010D50; border-radius: 40px; height: 180px;">
+          <i class="bi bi-bar-chart-fill" style="color: #0328EE; font-size: 3rem; min-width: 80px;"></i>
+          <div>
+            <h5 class="text-white fw-bold mb-4">Goal-Based Investing</h5>
+            <p class="mb-0">Building a diversified portfolio aligned with specific timelines and risk tolerance for goals like a home or retirement.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BENEFIT 4 -->
+      <div class="col-12">
+        <div class="info-widget d-flex align-items-center justify-content-start p-4" style="background-color: #010D50; border-radius: 40px; height: 180px;">
+          <i class="bi bi-calendar-check-fill" style="color: #0328EE; font-size: 3rem; min-width: 80px;"></i>
+          <div>
+            <h5 class="text-white fw-bold mb-4">Retirement Readiness</h5>
+            <p class="mb-0">Consistent contributions to tax-advantaged accounts targeting 10–15% of income to ensure lifelong financial independence.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- How Our Platform Helps Section -->
+
+<section class="scroll-fade-up section-dark py-5">
+  <div class="container">
+    <h2 class="text-white mb-4">How Our Platform Helps</h2>
+    <div class="row g-4 justify-content-center">
+      
+      <!-- Investment Strategy Recommendation -->
+      <div class="col-md-6">
+        <div class="info-widget d-flex align-items-center justify-content-center p-4" style="background-color: #010D50; border-radius: 40px; height: 246px; width: 100%;">
+          <i class="bi bi-bar-chart-line" style="color: #0328EE; font-size: 3rem; min-width: 80px;"></i>
+          <div>
+            <h5 class="text-white fw-bold mb-4">Investment Strategy</h5>
+            <p class="mb-1">Get smart, personalized recommendations based on your risk profile and goals.</p>
+            <a href="AI.html" class="start-now-links text-warning fw-bold">Start now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROI Calculator -->
+      <div class="col-md-6">
+        <div class="info-widget d-flex align-items-center justify-content-center p-4" style="background-color: #010D50; border-radius: 40px; height: 246px; width: 100%;">
+          <i class="bi bi-calculator" style="color: #0328EE; font-size: 3rem; min-width: 80px;"></i>
+          <div>
+            <h5 class="text-white fw-bold mb-4">ROI Calculator</h5>
+            <p class="mb-1">Compare returns across assets and forecast future value with our ROI tool.</p>
+            <a href="calc.html" class="start-now-links text-warning fw-bold">Start now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Goal-Based Planner -->
+      <div class="col-md-6">
+        <div class="info-widget d-flex align-items-center justify-content-center p-4" style="background-color: #010D50; border-radius: 40px; height: 246px; width: 100%;">
+          <i class="bi bi-bullseye" style="color: #0328EE; font-size: 3rem; min-width: 80px;"></i>
+          <div>
+            <h5 class="text-white fw-bold mb-4">Goal-Based Planner</h5>
+            <p class="mb-1">Create and manage milestones like home buying, education, or retirement.</p>
+            <a href="Goal_Based_Investment_Planning.html" class="start-now-links text-warning fw-bold">Start now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Market Insight Dashboard -->
+      <div class="col-md-6">
+        <div class="info-widget d-flex align-items-center justify-content-center p-4" style="background-color: #010D50; border-radius: 40px; height: 246px; width: 100%;">
+          <i class="bi bi-graph-up" style="color: #0328EE; font-size: 3rem; min-width: 80px;"></i>
+          <div>
+            <h5 class="text-white fw-bold mb-4">Market Insights</h5>
+            <p class="mb-1">Track market trends, news, and analytics to stay ahead of the curve.</p>
+            <a href="MarketDashboard.html" class="start-now-links text-warning fw-bold">Start now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ Section -->
+
+ <section id="faq" class="scroll-fade-up section-dark py-5">
+  <div class="container">
+    <h2 class="text-white mb-4">Frequently Asked Questions</h2>
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+
+      <!-- FAQ 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
+            How do I sign up and log in?
+          </button>
+        </h2>
+        <div id="faqOne" class="accordion-collapse collapse show">
+          <div class="accordion-body">
+            You can sign up using your email and password or your Google account. Once registered, you’ll receive an email to verify your account. For login, you can also select “Remember Me” to stay logged in on your device.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+            What happens if I forget my password?
+          </button>
+        </h2>
+        <div id="faqTwo" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Click “Forgot Password” on the login page. You’ll receive an email with a secure link to reset your password. Make sure to use a strong password following our safety guidelines.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
+            How does goal-based investment planning work?
+          </button>
+        </h2>
+        <div id="faqThree" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            You can add goals like buying a house or saving for education. Each goal tracks your progress and lets you prioritize them by rearranging their order. You can edit or delete goals at any time.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">
+            How are investment strategies recommended?
+          </button>
+        </h2>
+        <div id="faqFour" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            We suggest investment strategies based on your goal's risk level, expected return, and duration. You can explore full details, add strategies to your plan, bookmark them for later, and even rate them after use to improve future suggestions.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqDataLoss" aria-expanded="false" aria-controls="faqDataLoss">
+            Will I lose my goals or data if I log out or refresh?
+          </button>
+        </h2>
+        <div id="faqDataLoss" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            No. All your goals, investments, and preferences are saved to our secure backend database tied to your user account. You can safely log out or switch devices without losing any data.
+          </div>
+        </div>
+      </div>
+
+
+      <!-- FAQ 6 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSix" aria-expanded="false" aria-controls="faqSix">
+            How does the ROI Calculator work?
+          </button>
+        </h2>
+        <div id="faqSix" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Enter your investment amount, interest rate, duration, and optional contributions. You'll receive a detailed breakdown showing CAGR, effective annual return, and total gains — all exportable as PDF or printable reports.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSeven" aria-expanded="false" aria-controls="faqSeven">
+            Can I update or delete my account?
+          </button>
+        </h2>
+        <div id="faqSeven" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Yes, you can view and update your name, email, or phone anytime. To delete your account, you’ll need to confirm your password and go through a final confirmation step for security.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 8 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqEight" aria-expanded="false" aria-controls="faqEight">
+            Will I be logged out automatically?
+          </button>
+        </h2>
+        <div id="faqEight" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Yes, for your account security, you’ll be automatically logged out after a period of inactivity. Make sure to save your work or logout manually when done.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA Section -->
+<section class="cta-section text-center d-flex flex-column justify-content-center align-items-center py-5 ">
+  <div class="container">
+    <h1 class="scroll-fade-up text-white fw-bold mb-4" style="animation-delay: 0.3s;">Ready to start your journey?</h1>
+    
+    <a href="sign-up-page.html" class="btn btn-warning btn-md mb-3 fw-bold custom-btn">
+      CREATE AN ACCOUNT
+    </a>
+
+    <div class="d-flex justify-content-center align-items-center gap-2">
+      <p class="mb-0">Already a user?</p>
+      <a href="log-in-page.html" class="text-warning login-link">Login</a>
+    </div>
+  </div>
+</section>
+
+<!-- Login/Signup Modal -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title w-100" id="authModalLabel">Authentication Required</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>You need to log in or sign up to use this feature.</p>
+        <div class="d-flex justify-content-center gap-2">
+          <button id="loginBtn" class="btn btn-primary">Login</button>
+          <button id="signupBtn" class="btn btn-secondary">Sign Up</button>
+          <button class="btn btn-outline-dark" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/quotes.js"></script>
+  <!-- <script src="js/scripts.js"></script> -->
+   <script src="js/home.js"></script>
+
+  <script src="js/navbar.js"></script>
+  <script>
+  const floatElements = document.querySelectorAll('.scroll-fade-up');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  floatElements.forEach(el => observer.observe(el));
+</script>
+
+<!--session management -->
+<script src="js/sessionCheck.js"></script>
+<script>
+  let lastPingTime = 0;
+
+  function sendActivityPing() {
+    const now = Date.now();
+    // Only send a ping every 15 seconds to reduce traffic
+    if (now - lastPingTime > 15 * 1000) {
+      lastPingTime = now;
+      fetch('/api/auth/ping', { method: 'POST', credentials: 'include' })
+        .catch(err => console.error("Ping failed:", err));
+    }
+  }
+
+  ['click', 'mousemove', 'scroll', 'keydown'].forEach(event => {
+    document.addEventListener(event, sendActivityPing);
+  });
+</script>
+
+</body>
+
+<footer class="text-center py-3 text-white" style="background-color: #010725;">
+  &copy; copyright 5nance <span id="year"></span>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</html>

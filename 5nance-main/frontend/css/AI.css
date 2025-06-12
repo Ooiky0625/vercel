@@ -1,0 +1,334 @@
+/* Base Styles */
+:root {
+    --background: #010725;
+    --foreground: #ffffff;
+    --card-bg: #010d50;
+    --primary: #0328ee;
+    --muted: #847d7d;
+    --glow: rgba(3, 40, 238, 0.5);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.1;
+    }
+    100% {
+      transform: scale(0.8);
+      opacity: 0.3;
+    }
+  }
+  
+  html {
+    overflow-y: scroll;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'DM Sans', 'Inter', sans-serif;
+  }
+  
+  /* Main Content */
+  main {
+    animation: fadeIn 1s ease-out;
+  }
+  .main-heading {
+    font-size: 3.5rem;
+    font-weight: 700;
+  }
+  
+  .suggest-btn {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    border-radius: 50px;
+    padding: 0.5rem 2rem;
+    font-weight: 500;
+  }
+  
+  /* Sort Dropdown */
+  .sort-dropdown {
+    position: relative;
+  }
+  
+  .sort-dropdown-header {
+    background-color: rgba(1, 13, 80, 0.5);
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .sort-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    background-color: var(--card-bg);
+    border-radius: 0.5rem;
+    width: 200px;
+    z-index: 100;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: none;
+  }
+  
+  .sort-dropdown-menu.show {
+    display: block;
+  }
+  
+  .sort-option {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .sort-option:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .sort-option.active {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  /* Strategy Cards */
+  .strategy-card {
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    height: 100%;
+  }
+  
+  .strategy-title {
+    color: var(--foreground);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .risk-level {
+    color: var(--foreground);
+    margin-bottom: 0.25rem;
+  }
+  
+  .return-value, .duration {
+    color: var(--foreground);
+    margin-bottom: 0;
+  }
+  
+  .view-detail-btn {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    border-radius: 50px;
+    font-size: 0.875rem;
+    padding: 0.25rem 1rem;
+  }
+  
+  /* AI Analysis Overlay */
+  .ai-analysis-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 7, 37, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .ai-analysis-content {
+    max-width: 500px;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .ai-analysis-content .text-muted {
+    color: var(--muted) !important;
+  }
+  
+  .ai-robot-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  
+  .ai-robot {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  .ai-robot::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--primary);
+    opacity: 0.2;
+    animation: pulse 2s infinite;
+  }
+  
+  .ai-robot::after {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    border-radius: 50%;
+    background-color: var(--primary);
+    opacity: 0.1;
+    animation: pulse 2s infinite 0.3s;
+  }
+  
+  /* Strategy Detail Overlay */
+  .strategy-detail-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 7, 37, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .strategy-detail-content {
+    max-width: 600px;
+    width: 90%;
+    padding: 1rem;
+  }
+  
+  .strategy-detail-card {
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    padding: 2rem;
+    position: relative;
+  }
+  
+  .user-avatar {
+    position: absolute;
+    top: -30px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary);
+  }
+  
+  .avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .strategy-detail-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .strategy-description {
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+  }
+  
+  .strategy-description h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .view-detail-close {
+    margin-top: 1.5rem;
+    background-color: var(--primary);
+    border-color: var(--primary);
+    border-radius: 50px;
+    padding: 0.5rem 2rem;
+  }
+  
+  /* Dimmed Content */
+  .content-dimmed {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  
+  
+  /* Override Bootstrap Button Styles */
+  .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
+  
+  .btn-primary:hover, 
+  .btn-primary:focus {
+    background-color: #0220c0;
+    border-color: #0220c0;
+  }
+  
+  .btn-outline-primary {
+    border-color: var(--primary);
+    color: white;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+  }
+
+  #customStrategyBtn {
+    background-color: #555; /* Grey background */
+    border-color: #555;     /* Grey border */
+    border-radius: 50px;
+    padding: 0.5rem 2rem;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  #customStrategyBtn:hover,
+  #customStrategyBtn:focus {
+    background-color: #666;
+    border-color: #666;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .main-heading {
+      font-size: 2.5rem;
+    }
+    
+    .strategy-detail-card {
+      padding: 1.5rem;
+    }
+    
+    .sort-dropdown-menu {
+      width: 100%;
+      left: 0;
+      right: auto;
+    }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>5NANCE - Strategy Recommendation</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/AI.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Main Content -->
+  <main class="container py-5">
+    <h1 class="mt-5 main-heading mb-4">Strategy Recommendation</h1>
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+      <button class="btn btn-primary suggest-btn mb-3 mb-md-0" id="suggestBtn">
+        Suggest Matching Strategy
+      </button>
+      <button class="btn btn-outline-secondary" id="customizeBtn">
+        Customize Analysis
+      </button>
+
+      <div class="sort-dropdown" id="sortDropdown">
+        <div class="sort-dropdown-header">
+          <span id="currentSort">Sort by: Highest Return</span>
+          <i class="bi bi-chevron-down ms-2"></i>
+        </div>
+        <div class="sort-dropdown-menu">
+          <div class="sort-option" data-sort="highest-return">Highest Return</div>
+          <div class="sort-option" data-sort="lowest-risk">Lowest Risk</div>
+          <div class="sort-option" data-sort="shortest-duration">Shortest Duration</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dynamic Strategy Cards Will Be Injected Here -->
+    <div class="row g-4" id="strategiesContainer"></div>
+  </main>
+
+  <!-- AI Analysis Popup -->
+  <div class="ai-analysis-overlay" id="aiAnalysisOverlay">
+    <div class="ai-analysis-content">
+      <h2 class="text-center mb-4">Finding your best match...</h2>
+      <div class="ai-robot-container">
+        <div class="ai-robot">
+          <img src="images/AI.png" alt="AI Robot" width="180" height="180" />
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <p>Our AI is analyzing your financial goals,<br />profile, and preferences...</p>
+        <p class="text-muted">This may take a few seconds.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Strategy Detail Popup -->
+  <div class="strategy-detail-overlay" id="strategyDetailOverlay">
+    <div class="strategy-detail-content">
+      <div class="strategy-detail-card">
+        <div class="user-avatar">
+          <img src="images/idea.jpg" alt="User" class="avatar-img" />
+        </div>
+
+        <h2 class="strategy-detail-title">Strategy Detail</h2>
+
+        <div class="strategy-detail-info">
+          <div class="row mb-3">
+            <div class="col-6">
+              <p class="risk-level">Risk level: Moderate</p>
+              <p class="return-value">Return: 7.0%</p>
+            </div>
+            <div class="col-6">
+              <p class="duration">Duration: 5 years</p>
+            </div>
+          </div>
+
+          <div class="strategy-description">
+            <h3>Description</h3>
+            <p>Conservative investment using bonds and fixed deposit.</p>
+          </div>
+        </div>
+
+        <button class="btn btn-primary view-detail-close" id="closeDetailBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Customize Analysis Form Popup -->
+  <div class="strategy-detail-overlay" id="customizeOverlay" style="display: none;">
+    <div class="strategy-detail-content">
+      <div class="strategy-detail-card">
+        <h2 class="strategy-detail-title">Customize Your Strategy</h2>
+        <form id="customForm">
+          <div class="mb-3">
+            <label for="riskSelect" class="form-label">Preferred Risk Tolerance</label>
+            <select class="form-select" id="riskSelect" required>
+              <option value="low">Low</option>
+              <option value="moderate">Moderate</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="durationInput" class="form-label">Preferred Duration (years)</label>
+            <input type="number" class="form-control" id="durationInput" min="1" required />
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Analyze</button>
+          <button type="button" class="btn btn-secondary mt-2 w-100" id="closeCustomizeBtn">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="js/AI.js" defer></script>
+  <script src="js/navbar.js"></script>
+</body>
+
+<!-- Footer -->
+<footer class="text-center py-3 text-white" style="background-color: #010725;">
+  &copy; copyright 5nance <span id="year"></span>
+</footer>
+</html>
