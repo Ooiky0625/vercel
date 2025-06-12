@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           localStorage.removeItem("userId");
           localStorage.removeItem("loggedIn"); // remove localStorage marker
 
-          await fetch("https://fivenance.onrender.com/api/logout", {
+          await fetch("https://vercel-rseh.onrender.com/api/logout", {
             method: "POST",
             credentials: "include"
           });

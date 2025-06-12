@@ -72,7 +72,7 @@ async function handlePasswordReset(e) {
         // If coming from forgot password flow
         if (resetEmail) {
             // Find user by email
-            const userResponse = await fetch(`https://fivenance.onrender.com/api/users/find-by-email`, {
+            const userResponse = await fetch(`https://vercel-rseh.onrender.com/api/users/find-by-email`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -88,7 +88,7 @@ async function handlePasswordReset(e) {
             const userId = userData.userId;
 
             // Update password
-            const updateResponse = await fetch(`https://fivenance.onrender.com/api/users/${userId}/reset-password`, {
+            const updateResponse = await fetch(`https://vercel-rseh.onrender.com/api/users/${userId}/reset-password`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
@@ -119,7 +119,7 @@ async function handlePasswordReset(e) {
         const currentPassword = document.getElementById("current-password").value;
 
         // Validate current password
-        const response = await fetch(`https://fivenance.onrender.com/api/users/${USER_ID}/verify-password`, {
+        const response = await fetch(`https://vercel-rseh.onrender.com/api/users/${USER_ID}/verify-password`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -145,7 +145,7 @@ async function handlePasswordReset(e) {
         }
 
         // Update password in database
-        const updateResponse = await fetch(`https://fivenance.onrender.com/api/users/${USER_ID}/reset-password`, {
+        const updateResponse = await fetch(`https://vercel-rseh.onrender.com/api/users/${USER_ID}/reset-password`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

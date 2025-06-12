@@ -95,7 +95,7 @@ function login() {
 
   const loginData = { email, password };
 
-  fetch("https://fivenance.onrender.com/api/login", {
+  fetch("https://vercel-rseh.onrender.com/api/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(loginData),

@@ -1,5 +1,5 @@
 // API Configuration
-const API_BASE_URL = "https://fivenance.onrender.com/api"
+const API_BASE_URL = "https://vercel-rseh.onrender.com/api"
 
 // Form state
 let currentStep = 1

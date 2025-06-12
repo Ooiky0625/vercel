@@ -1,5 +1,5 @@
 // API Configuration
-const API_BASE_URL = "https://fivenance.onrender.com/api"
+const API_BASE_URL = "https://vercel-rseh.onrender.com/api"
 let USER_ID = localStorage.getItem("userId") // Changed from USERNAME to USER_ID
 
 // Global variables
@@ -166,7 +166,7 @@ async function loadGoals() {
     goals = await GoalAPI.getAllGoals()
     renderGoals()
   } catch (error) {
-    showError("Failed to load goals. Please make sure your backend server is running on https://fivenance.onrender.com")
+    showError("Failed to load goals. Please make sure your backend server is running on https://vercel-rseh.onrender.com")
   }
 }
 

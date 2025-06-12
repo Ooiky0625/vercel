@@ -7,7 +7,7 @@ async function handleForgotPassword(e) {
 
     try {
         // Check if email exists in database
-        const response = await fetch(`https://fivenance.onrender.com/api/users/check-email`, {
+        const response = await fetch(`https://vercel-rseh.onrender.com/api/users/check-email`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ async function handleForgotPassword(e) {
         localStorage.setItem('resetEmail', email);
 
         // Send verification code to email
-        const sendCodeResponse = await fetch(`https://fivenance.onrender.com/api/users/send-verification-code`, {
+        const sendCodeResponse = await fetch(`https://vercel-rseh.onrender.com/api/users/send-verification-code`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
