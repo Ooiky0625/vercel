@@ -162,7 +162,7 @@ async function loadNews() {
   const wrapper = document.getElementById("articlesWrapper")
 
   try {
-    const response = await fetch(`${API_CONFIG.news.url}&apiKey=${API_CONFIG.news.key}`)
+    const response = await fetch("/api/news") // <-- Calls your backend proxy route
     const data = await response.json()
 
     if (!data.articles || data.articles.length === 0) {

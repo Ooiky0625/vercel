@@ -795,3 +795,25 @@ app.post("/api/users/find-by-email", async (req, res) => {
     res.status(500).json({ message: "Error finding user" });
   }
 });
+
+const axios = require('axios');
+
+// ... existing middleware and routes
+
+app.get('/api/news', async (req, res) => {
+  try {
+    const response = await axios.get('https://newsapi.org/v2/everything', {
+      params: {
+        q: 'finance',
+        language: 'en',
+        pageSize: 15,
+        sortBy: 'publishedAt',
+        apiKey: '2536873d9758434994ac50d94b0fadfa', // Move to .env if possible
+      },
+    });
+    res.json(response.data);
+  } catch (error) {
+    console.error('❌ NewsAPI fetch error:', error.response?.data || error.message);
+    res.status(500).json({ message: 'Failed to fetch news' });
+  }
+});
