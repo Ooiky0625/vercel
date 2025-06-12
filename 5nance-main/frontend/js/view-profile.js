@@ -8,7 +8,7 @@ async function populateViewProfile() {
   }
 
   try {
-    const res = await fetch(`http://localhost:5000/api/profile/${userId}`);
+    const res = await fetch(`https://fivenance.onrender.com/api/profile/${userId}`);
     console.log("Fetch status:", res.status); // DEBUG
 
     if (!res.ok) throw new Error("Failed to fetch profile");

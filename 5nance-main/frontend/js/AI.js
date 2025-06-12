@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Strategy data
   // Fetch strategies from MongoDB via backend API
   function fetchStrategies() {
-    fetch('http://localhost:5000/api/strategies')
+    fetch('https://fivenance.onrender.com/api/strategies')
       .then(response => response.json())
       .then(data => {
         console.log("Fetched strategies:", data); // Debug log
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
             aiAnalysisOverlay.style.display = 'flex';
             document.querySelector('main').classList.add('content-dimmed');
 
-            const profileRes = await fetch(`http://localhost:5000/api/financial-profile/${userId}`);
+            const profileRes = await fetch(`https://fivenance.onrender.com/api/financial-profile/${userId}`);
             const profileData = await profileRes.json();
             if (!profileRes.ok) throw new Error('Failed to fetch profile');
 
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function() {
               financial_discipline: profileData.financial_discipline
             };
 
-            const predictRes = await fetch('http://localhost:5000/api/predict', {
+            const predictRes = await fetch('https://fivenance.onrender.com/api/predict', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function() {
       aiOverlay.style.display = "flex";
       document.querySelector('main').classList.add('content-dimmed');
 
-      const response = await fetch("http://localhost:5000/api/customize", {
+      const response = await fetch("https://fivenance.onrender.com/api/customize", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

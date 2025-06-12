@@ -70,7 +70,7 @@ async function populateEditProfile() {
   if (!userId) return;
 
   try {
-    const response = await fetch(`http://localhost:5000/api/profile/${userId}`);
+    const response = await fetch(`https://fivenance.onrender.com/api/profile/${userId}`);
     if (!response.ok) throw new Error("Failed to fetch user");
 
     const user = await response.json();
@@ -147,7 +147,7 @@ document.getElementById("edit-profile-form").addEventListener("submit", async fu
   };
 
   try {
-    const response = await fetch(`http://localhost:5000/api/profile/${userId}`, {
+    const response = await fetch(`https://fivenance.onrender.com/api/profile/${userId}`, {
       method: "PUT", // or PATCH
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedData),

@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           localStorage.removeItem("userId");
           localStorage.removeItem("loggedIn"); // remove localStorage marker
 
-          await fetch("http://localhost:5000/api/logout", {
+          await fetch("https://fivenance.onrender.com/api/logout", {
             method: "POST",
             credentials: "include"
           });
